@@ -1,0 +1,16 @@
+var express = require('express');
+var router = express.Router();
+var db = require("../computer/db"); //引入数据库封装模块
+
+/* GET home page. */
+router.get('/', function (req, res, next) {
+
+	//查询user表全部内容
+	db.query("SELECT * FROM user", [], function (results, fields) {
+		console.log(results);
+		res.send(results);
+	})
+
+});
+
+module.exports = router;
