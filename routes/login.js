@@ -4,7 +4,7 @@ var localhost = require('./computer/link')
 var router = express.Router();
 /* GET users listing. */
 router.post('/', function (req, res, next) {
-	const username = req.body.username
+	const username = req.body.username //前端传递过来的值
 	const password = req.body.password
 	const sql = ` SELECT * FROM list where username=${username} and password=${password}`
 	console.log(sql)
